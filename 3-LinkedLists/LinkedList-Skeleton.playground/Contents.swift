@@ -68,10 +68,8 @@ class LinkList {
     }
 
     func deleteLast() {
-        if head == nil { return }
-        
         var currentNode = head
-        var previousNode = head
+        var previousNode: Node?
         
         while currentNode?.next != nil {
             previousNode = currentNode
