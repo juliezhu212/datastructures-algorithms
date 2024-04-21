@@ -85,10 +85,11 @@ class LinkList {
 
 let linkedList = LinkList()
 
-linkedList.addFront(5)
 linkedList.addFront(4)
 linkedList.addFront(3)
 linkedList.addFront(2)
+linkedList.addFront(1)
+linkedList.addBack(5)
 
 linkedList.printLinkedList()
 linkedList.getFirst()
