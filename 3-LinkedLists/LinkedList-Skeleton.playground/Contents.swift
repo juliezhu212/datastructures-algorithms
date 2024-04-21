@@ -64,6 +64,7 @@ class LinkList {
     }
     
     func deleteFirst() {
+        head = head?.next
     }
 
     func deleteLast() {
