@@ -30,25 +30,37 @@ class LinkList {
             return
         }
         
-        var pointer = head!
-        while pointer.next != nil {
-            pointer = pointer.next!
+        var currentNode = head!
+        while currentNode.next != nil {
+            currentNode = currentNode.next!
         }
-        pointer.next = newNode
+        currentNode.next = newNode
     }
 
     func getLast() -> Int? {
         if head == nil { return nil }
         
-        var pointer = head!
-        while pointer.next != nil {
-            pointer = pointer.next!
+        var currentNode = head!
+        while currentNode.next != nil {
+            currentNode = currentNode.next!
         }
         
-        return pointer.data
+        return currentNode.data
     }
 
     func insert(position: Int, data: Int) {
+        if position == 0 {
+            addFront(data)
+            return
+        }
+        
+        var currentNode = head
+        for i in 0..<position-1 {
+            currentNode = currentNode?.next
+        }
+        
+        let newNode = Node(data, currentNode?.next)
+        currentNode!.next = newNode
     }
     
     func deleteFirst() {
@@ -71,13 +83,13 @@ class LinkList {
         if head == nil { return }
         
         var result = [Int]()
-        var pointer = head!
+        var currentNode = head!
         
-        while pointer.next != nil {
-            result.append(pointer.data)
-            pointer = pointer.next!
+        while currentNode.next != nil {
+            result.append(currentNode.data)
+            currentNode = currentNode.next!
         }
-        result.append(pointer.data)
+        result.append(currentNode.data)
         
         print(result)
     }
@@ -94,3 +106,9 @@ linkedList.addBack(5)
 linkedList.printLinkedList()
 linkedList.getFirst()
 linkedList.getLast()
+
+linkedList.insert(position: 0, data: 8)
+linkedList.printLinkedList()
+
+linkedList.insert(position: 2, data: 7)
+linkedList.printLinkedList()
