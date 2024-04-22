@@ -62,6 +62,7 @@ class HashTable {
         if entries[index] == nil {
             entries[index] = entry
         }
+        
         // else handle collision by appending to our linked list
         else {
             var collisions = entries[index]
