@@ -144,3 +144,7 @@ linkedList.printLinkedList()
 
 linkedList.delete(at: 1)
 linkedList.printLinkedList()
+
+linkedList.isEmpty
+linkedList.clear()
+linkedList.isEmpty
