@@ -11,7 +11,7 @@ import UIKit
      "004-448-555-583-61"
  
  Assume:
- - S consists only of digits (0-9), spaces, and/or dashses (-)
+ - S consists only of digits (0-9), spaces, and/or dashes (-)
  - S containts at least two digits
  
  Translate:
@@ -26,7 +26,7 @@ func solution(_ S : String) -> String {
     var result = Array(S)
     result = result.filter{ $0 != " " && $0 != "-" }
     
-    // special ending: 1
+    // special ending: no length 1 allowed
     var count = result.count % 3
     let special_end = count == 1
     
