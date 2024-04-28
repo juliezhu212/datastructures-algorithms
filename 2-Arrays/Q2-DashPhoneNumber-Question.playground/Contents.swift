@@ -23,8 +23,36 @@ import UIKit
  
  */
 func solution(_ S : String) -> String {
-    // do your work here
-    return ""
+    var result = Array(S)
+    result = result.filter{ $0 != " " }
+    result = result.filter{ $0 != "-" }
+    
+    // special ending: 1
+    var count = result.count % 3
+    let special_end = count == 1
+    
+    if result.count == 4 {
+        result.insert("-", at: 2)
+        
+        let resultString = String(result)
+        print(resultString)
+        return resultString
+    }
+    
+    var i = 3
+    while i < result.count {
+        result.insert("-", at: i)
+        
+        if i + 6 > result.count && special_end {
+            i += 3
+        } else {
+            i += 4
+        }
+    }
+    
+    let resultString = String(result)
+    print(resultString)
+    return resultString
 }
 
 solution("123456789")           // 123-456-789
