@@ -46,11 +46,3 @@ solution(["ada,", "eva", "leo"], ["1212", "1111", "4444"], "112")   // NO CONTAC
 // edge cases
 solution([String](), [String](), "")
 solution(A, B, "")
-
-public func solutionDict(_ A : [String], _ B : [String], _ P : String) -> String {
-    // 🕹 Game on here
-    return ""
-}
-
-
-
