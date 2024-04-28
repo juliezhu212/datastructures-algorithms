@@ -15,8 +15,15 @@ class Node {
 }
 
 func length(_ head: Node?) -> Int {
-    // Do your work here...
-    return 0
+    var count = 0
+    var pointer = head
+    
+    while pointer != nil {
+        count += 1
+        pointer = pointer?.next
+    }
+    
+    return count
 }
 
 // 1 2 3 4 5 6
