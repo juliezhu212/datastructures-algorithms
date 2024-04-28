@@ -33,6 +33,8 @@ func solution(_ S : String) -> String {
     var count = -2
     for c in noSpaceNoDash {
         result.append(c)
+        
+        // For every 3 characters, append "-"
         if count % 3 == 0 {
             result.append("-")
         }
