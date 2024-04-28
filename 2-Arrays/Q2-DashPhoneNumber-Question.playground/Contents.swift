@@ -24,8 +24,7 @@ import UIKit
  */
 func solution(_ S : String) -> String {
     var result = Array(S)
-    result = result.filter{ $0 != " " }
-    result = result.filter{ $0 != "-" }
+    result = result.filter{ $0 != " " && $0 != "-" }
     
     // special ending: 1
     var count = result.count % 3
