@@ -31,17 +31,11 @@ func solution(_ S : String) -> String {
     var count = result.count % 3
     let special_end = count == 1
     
-    if result.count == 4 {
-        result.insert("-", at: 2)
-        
-        let resultString = String(result)
-        print(resultString)
-        return resultString
-    }
-    
-    var i = 3
+    var i = -1
     while i < result.count {
-        result.insert("-", at: i)
+        if i > 0 {
+            result.insert("-", at: i)
+        }
         
         if i + 6 > result.count && special_end {
             i += 3
