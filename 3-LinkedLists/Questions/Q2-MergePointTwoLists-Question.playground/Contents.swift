@@ -49,7 +49,22 @@ func printLinkedList(_ head: Node?) {
 }
 
 func findMerge(headA: Node?, headB: Node?) -> Int? {
-    // Here...
+    var arrayA = [Int: Int]()
+    
+    var pointer = headA
+    while pointer != nil {
+        arrayA[pointer!.data] = 1
+        pointer = pointer!.next
+    }
+    
+    pointer = headB
+    while pointer != nil {
+        if arrayA.keys.contains(pointer!.data) {
+            return pointer!.data
+        }
+        pointer = pointer!.next
+    }
+    
     return nil
 }
 
@@ -61,7 +76,7 @@ let node3 = Node(3, node4)
 let node2 = Node(2, node3)
 let node1 = Node(1, node2)
 
-// 10 11 12 13 4 5 6
+// 10 11 4 5 6
 let node11 = Node(11, node4)
 let node10 = Node(10, node11)
 
