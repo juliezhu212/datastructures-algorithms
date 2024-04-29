@@ -8,9 +8,15 @@ import UIKit
  */
 
 func solution(_ text: String) -> String {
-    // Do your work here... 
-    return ""
+    var stack = Array(text)
+    
+    var reversed = [Character]()
+    for i in stack {
+        reversed.append(stack.popLast()!)
+    }
+    
+    return String(reversed)
 }
 
-solution("abc") // bca
+solution("abc") // cba
 solution("Would you like to play a game?")
