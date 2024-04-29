@@ -70,9 +70,12 @@ func solutionQueueLeft(A: [Int], K: Int) -> [Int] {
     
     // treat like a queue enqueuing and dequeuing off the end
     for _ in 1...K {
-        // Do your work here...
+        let first = result.first!
+        result.insert(first, at: A.count)
+        result.removeFirst()
     }
     
+    print(result)
     return result
 }
 
@@ -81,5 +84,3 @@ solutionQueueLeft(A: [1, 2, 3, 4, 5], K: 2) // [3, 4, 5, 1, 2]
 solutionQueueLeft(A: [1, 2, 3, 4, 5], K: 3) // [4, 5, 1, 2, 3]
 
 solutionQueueLeft(A: [3, 8, 9, 7, 6], K: 3) // [7, 6, 3, 8, 9]
-
-
