@@ -24,8 +24,19 @@ class Node {
     }
 }
 
-func hasCycle(first: Node) -> Bool {
-    // here...
+func hasCycle(first: Node?) -> Bool {
+    var dict = [Int: Bool]()
+    
+    var pointer = first
+    while pointer != nil {
+        if dict[pointer!.data] == true {
+            return true
+        }
+        
+        dict[pointer!.data] = true
+        pointer = pointer!.next
+    }
+
     return false
 }
 
@@ -42,3 +53,4 @@ node4.next = node5
 node5.next = node3
 
 hasCycle(first: head)
+hasCycle(first: nil)
